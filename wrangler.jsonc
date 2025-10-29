@@ -1,0 +1,7 @@
+{
+  "name": "student-benefits",
+  "compatibility_date": "2025-10-29",
+  "assets": {
+    "directory": "./dist"
+  }
+}
