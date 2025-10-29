@@ -7,8 +7,8 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="hero-gradient relative min-h-screen flex items-center justify-center" id="hero">
-      {/* Animated gradient blobs */}
+    <section className="relative bg-black min-h-screen flex items-center justify-center overflow-hidden" id="hero">
+      {/* Animated gradient blobs - contained within section */}
       <div className="gradient-blob blob-1"></div>
       <div className="gradient-blob blob-2"></div>
       <div className="gradient-blob blob-3"></div>
