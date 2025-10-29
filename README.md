@@ -1,8 +1,14 @@
-# Student Benefits Hub
+<div align="center">
+  <img src="src/assets/img/logo/main-sub.png" alt="Student Benefits Hub Logo" width="200"/>
+  
+  # Student Benefits Hub
 
-Ever wonder what your .edu email is *really* worth?It's not just for logging into the school portal. It's basically a key to thousands of dollars in free software, cloud credits, and pro tools. This project is a place to help students find and claim all the free stuff they can get with their school email.
+  Ever wonder what your .edu email is *really* worth? It's not just for logging into the school portal. It's basically a key to thousands of dollars in free software, cloud credits, and pro tools. This project is a place to help students find and claim all the free stuff they can get with their school email.
+</div>
 
-## What is this?
+---
+
+## 🎯 What is this?
 
 The Student Benefits Hub is pretty much a big list of freebies and discounts for students. I've focused a lot on the GitHub Student Developer Pack, but I'm adding other stuff too. I made it to help students like us find everything from cloud hosting and AI tools to design software and productivity apps—all for free or super cheap.
 
@@ -12,7 +18,7 @@ On the site, you'll find:
   - **Step-by-step guides** on how to actually claim the benefits without getting lost.- **Tutorials** to get the most out of the best perks (like using DigitalOcean to host your portfolio).
   - **"Maximize" guides** that give you practical ideas for using this stuff in real projects.
 
-## Why did I build this?
+## 💡 Why did I build this?
 
 I built this because I almost missed out on so many free tools in my first year. The GitHub Student Developer Pack *alone* is just worth a crazy amount (like over $200k in credits my friend), but a lot of students don't even know it exists or just get stuck trying to sign up.
 
@@ -24,7 +30,7 @@ All the info was scattered everywhere, explained complicated in docs, or hidden 
 
 It’s disappointing to pay for something when you could’ve gotten it for free. This site is just here to make sure we all get the free stuff we're entitled to.
 
-## How can you help?
+## 🤝 How can you help?
 
 This whole project is open source, and I'd appreicate some help\! If you want to contribute, here are a few ways you can make this site better for everyone:
 
@@ -69,7 +75,7 @@ If you're a coder, I always appreciate tech improvements:
 
 Did this site actually help you save money or build something? Let me know\! It's super motivating to hear success stories, and it shows other students that this is worth their time.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 I built this with some modern tech to keep it fast and easy to work on:
 
@@ -83,7 +89,7 @@ I built this with some modern tech to keep it fast and easy to work on:
 
 I tried to keep the setup really simple. Most of the benefits are just stored in data files (`.ts` files in `/data`), so you can add or update stuff without having to dig through a bunch of React code.
 
-## Getting Started (For Contributors)
+## 🚀 Getting Started (For Contributors)
 
 If you want to run this on your own machine and make changes, follow these steps:
 
@@ -107,40 +113,49 @@ npm run build
 
 The site should pop up at `http://localhost:5173`. It uses hot module reloading, so any changes you make will show up right away without a refresh.
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
-├── components/         # React components
-│   ├── HeroSection.tsx
+├── components/           # React components
+│   ├── BenefitCard.tsx
 │   ├── BenefitsSection.tsx
-│   ├── ClaimingGuide.tsx
 │   ├── Footer.tsx
-│   └── DigitalOceanGuide.tsx
-├── data/               # Benefit data and content
+│   ├── HeroSection.tsx
+│   ├── MaximizeSection.tsx
+│   ├── ScrollToTop.tsx
+│   └── guides/          # Step-by-step tutorial guides
+│       ├── AIChatbotGuide.tsx
+│       ├── ClaimingGuide.tsx
+│       └── DigitalOceanGuide.tsx
+├── data/                # Benefit data and content
 │   ├── benefitsData.ts
 │   ├── claimingGuideData.ts
 │   └── maximizeGuidesData.ts
-├── types/              # TypeScript type definitions
-├── tests/              # Test files
-└── App.tsx             # Main app component
+├── pages/               # Page-level components
+│   └── MaximizePage.tsx
+├── types/               # TypeScript type definitions
+│   └── index.ts
+├── tests/               # Test files
+├── App.tsx              # Main app with routing
+└── main.tsx             # Application entry point
 ```
 
-To add a new benefit, just edit the files in `src/data/`.If you want to add a whole new guide page, you'll need to make a new component in `src/components/` and then add it to the routes in `App.tsx`.
+To add a new benefit, just edit the files in `src/data/`. If you want to add a whole new guide page, you'll need to make a new component in `src/components/guides/` and then add it to the routes in `App.tsx`.
 
-## Contributing Guidelines
+## 📋 Contributing Guidelines
 
 1.  **Keep it simple:** The site should be easy for any student to use, even non-tech majors.
-2.**Be accurate:** Please double-check your links and the requirements before you add a new benefit.
+2.  **Be accurate:** Please double-check your links and the requirements before you add a new benefit.
 3.  **Write normally:** Write like you're explaining it to a 5 year old kid, not everyone learns the same way.
 4.  **Test your work:** Run `npm test` and click around to make sure nothing broke.
 5.  **Focus on students:** Only add perks that are *actually* useful and available to students.
 
-## Questions or Issues?
+## 💬 Questions or Issues?
 
 Got questions or run into a problem? Just open an issue on [GitHub](https://github.com/marlon-caisip/student-benefits) or email me at marlon.caisip@cbsua.edu.ph. Whether it's a bug, an idea, or you need help (wag lang pera), I'm happy to help.
 
-## License
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
