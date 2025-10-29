@@ -189,11 +189,10 @@ body {
 }
 
 /* Liquid Glass Effect */
-/* Liquid Glass Effect - iOS 26 inspired with proper layering */
+/* Liquid Glass Effect - iOS 26 inspired with proper layering and mobile compatibility */
 .liquid-glass {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* Fallback for browsers without backdrop-filter support */
+    background: rgba(20, 20, 30, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 
         /* Depth shadow layer */
@@ -204,10 +203,18 @@ body {
         inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
 }
 
+/* Modern browsers with backdrop-filter support */
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+    .liquid-glass {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px) saturate(150%);
+        -webkit-backdrop-filter: blur(12px) saturate(150%);
+    }
+}
+
 .liquid-glass-strong {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(30px) saturate(200%);
-    -webkit-backdrop-filter: blur(30px) saturate(200%);
+    /* Fallback for browsers without backdrop-filter support */
+    background: rgba(20, 20, 30, 0.90);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 
         /* Depth shadow layer (stronger separation) */
@@ -218,6 +225,15 @@ body {
         inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
         /* Shadow layer (added depth) */
         inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Modern browsers with backdrop-filter support */
+@supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+    .liquid-glass-strong {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+    }
 }
 
 /* Animated arrow */
