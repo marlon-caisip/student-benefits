@@ -98,7 +98,7 @@ export const Footer = () => {
             <div className="hidden sm:block w-px h-8 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
             
             <a
-              href="https://github.com/yourusername/edu-hub"
+              href="https://github.com/marlon-caisip/student-benefits.git"
               target="_blank"
               rel="noopener noreferrer"
               className="claim-btn inline-flex py-3 px-8 rounded-xl font-semibold text-sm tracking-wide items-center justify-center gap-2 relative z-10"
