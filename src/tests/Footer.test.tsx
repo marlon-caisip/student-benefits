@@ -4,7 +4,6 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Footer } from '../components/Footer';
-import { maximizeGuides } from '../data/maximizeGuidesData';
 
 // Helper to render with router
 const renderWithRouter = (component: React.ReactElement) => {
@@ -12,67 +11,23 @@ const renderWithRouter = (component: React.ReactElement) => {
 };
 
 describe('Footer Component', () => {
-  it('renders the Maximize section title', () => {
+  it('renders the CTA section title', () => {
     renderWithRouter(<Footer />);
-    expect(screen.getByText('Maximize Your Benefits')).toBeInTheDocument();
+    expect(screen.getByText('Ready to Maximize Your Benefits?')).toBeInTheDocument();
   });
 
-  it('renders the Maximize section subtitle', () => {
+  it('renders the CTA section subtitle', () => {
     renderWithRouter(<Footer />);
     expect(
-      screen.getByText(/Learn how to get the most value from your GitHub Student Developer Pack/i)
+      screen.getByText(/Discover step-by-step guides and tutorials to get the most value from your GitHub Student Developer Pack/i)
     ).toBeInTheDocument();
   });
 
-  it('renders all maximize guide cards', () => {
+  it('renders the "Explore Maximize Guides" link button', () => {
     renderWithRouter(<Footer />);
-    maximizeGuides.forEach((guide) => {
-      expect(screen.getByText(guide.title)).toBeInTheDocument();
-    });
-  });
-
-  it('renders guide descriptions', () => {
-    renderWithRouter(<Footer />);
-    maximizeGuides.forEach((guide) => {
-      expect(screen.getByText(guide.description)).toBeInTheDocument();
-    });
-  });
-
-  it('renders guide difficulty badges', () => {
-    renderWithRouter(<Footer />);
-    maximizeGuides.forEach((guide) => {
-      const badges = screen.getAllByText(guide.difficulty);
-      expect(badges.length).toBeGreaterThan(0);
-    });
-  });
-
-  it('renders guide category badges', () => {
-    renderWithRouter(<Footer />);
-    maximizeGuides.forEach((guide) => {
-      const badges = screen.getAllByText(guide.category);
-      expect(badges.length).toBeGreaterThan(0);
-    });
-  });
-
-  it('renders guide icons', () => {
-    renderWithRouter(<Footer />);
-    // Verify SVG icons are rendered
-    const iconElements = document.querySelectorAll('.maximize-icon svg');
-    expect(iconElements.length).toBe(maximizeGuides.length);
-    // Each icon should have proper lucide class
-    iconElements.forEach((icon) => {
-      expect(icon.classList.contains('lucide')).toBe(true);
-    });
-  });
-
-  it('renders "Coming Soon" buttons and guide links', () => {
-    renderWithRouter(<Footer />);
-    // Should have "Coming Soon" for guides without pages
-    const comingSoonButtons = screen.getAllByText('Coming Soon');
-    expect(comingSoonButtons.length).toBeGreaterThan(0);
-    // Should have "Read Guide" for DigitalOcean
-    const readGuideLink = screen.getByText('Read Guide →');
-    expect(readGuideLink).toBeInTheDocument();
+    const ctaButton = screen.getByText('Explore Maximize Guides →');
+    expect(ctaButton).toBeInTheDocument();
+    expect(ctaButton.closest('a')).toHaveAttribute('href', '/maximize');
   });
 
   it('renders contact panel with title', () => {
@@ -101,6 +56,15 @@ describe('Footer Component', () => {
     expect(screen.getByText('marlon.caisip@cbsua.edu.ph')).toBeInTheDocument();
   });
 
+  it('renders GitHub repository link', () => {
+    renderWithRouter(<Footer />);
+    const githubLink = screen.getByRole('link', {
+      name: /view github repository/i,
+    });
+    expect(githubLink).toBeInTheDocument();
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/marlon-caisip/student-benefits.git');
+  });
+
   it('renders footer credits', () => {
     renderWithRouter(<Footer />);
     const currentYear = new Date().getFullYear();
@@ -109,31 +73,10 @@ describe('Footer Component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders maximize cards with liquid-glass-strong class', () => {
-    const { container } = renderWithRouter(<Footer />);
-    const cards = container.querySelectorAll('.maximize-card.liquid-glass-strong');
-    expect(cards).toHaveLength(maximizeGuides.length);
-  });
-
   it('renders contact panel with liquid-glass-strong class', () => {
     const { container } = renderWithRouter(<Footer />);
     const panel = container.querySelector('.contact-panel.liquid-glass-strong');
     expect(panel).toBeInTheDocument();
-  });
-
-  it('has correct aria-label for guide buttons', () => {
-    renderWithRouter(<Footer />);
-    // Check for buttons and links
-    maximizeGuides.forEach((guide) => {
-      const elements = screen.getAllByLabelText(`Read guide: ${guide.title}`);
-      expect(elements.length).toBeGreaterThan(0);
-    });
-  });
-
-  it('renders maximize grid container', () => {
-    const { container } = renderWithRouter(<Footer />);
-    const grid = container.querySelector('.maximize-grid');
-    expect(grid).toBeInTheDocument();
   });
 
   it('has footer-section class on footer element', () => {
