@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import BenefitCard from '../components/BenefitCard';
 import BenefitsSection from '../components/BenefitsSection';
-import ClaimingGuide from '../components/ClaimingGuide';
+import ClaimingGuide from '../components/guides/ClaimingGuide';
 import { Footer } from '../components/Footer';
 
 // Helper to render with router
