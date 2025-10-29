@@ -542,41 +542,26 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Color-specific difficulty badges */
-.maximize-card.color-purple .difficulty-badge {
-    background: rgba(139, 92, 246, 0.2);
-    color: #C4B5FD;
-    border: 1px solid rgba(139, 92, 246, 0.3);
-}
-
-.maximize-card.color-red .difficulty-badge {
-    background: rgba(239, 68, 68, 0.2);
-    color: #FCA5A5;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.maximize-card.color-orange .difficulty-badge {
-    background: rgba(245, 158, 11, 0.2);
-    color: #FCD34D;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.maximize-card.color-blue .difficulty-badge {
-    background: rgba(59, 130, 246, 0.2);
-    color: #BFDBFE;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.maximize-card.color-green .difficulty-badge {
+/* Uniform difficulty badge colors based on level */
+/* Beginner - Green */
+.difficulty-badge[data-difficulty="beginner"] {
     background: rgba(16, 185, 129, 0.2);
     color: #A7F3D0;
     border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-.maximize-card.color-pink .difficulty-badge {
-    background: rgba(236, 72, 153, 0.2);
-    color: #FBCFE8;
-    border: 1px solid rgba(236, 72, 153, 0.3);
+/* Intermediate - Orange */
+.difficulty-badge[data-difficulty="intermediate"] {
+    background: rgba(245, 158, 11, 0.2);
+    color: #FCD34D;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Advanced - Red */
+.difficulty-badge[data-difficulty="advanced"] {
+    background: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 /* Category badges stay neutral */
