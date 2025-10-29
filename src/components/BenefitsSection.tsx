@@ -59,7 +59,7 @@ const BenefitsSection = () => {
   }, []);
 
   return (
-    <main id="benefits-hub" className="relative bg-black min-h-screen py-32">
+    <main id="benefits-hub" className="relative bg-black min-h-screen py-32" style={{ isolation: 'isolate' }}>
       <div className="max-w-7xl mx-auto px-6 space-y-40">
         {benefitsData.map((category, sectionIndex) => (
           <section
