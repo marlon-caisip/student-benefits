@@ -1,3 +1,4 @@
+@import "tailwindcss";
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,11 @@ body {
     overflow-x: hidden;
 }
 
+.app {
+    position: relative;
+    overflow: visible;
+}
+
 /* Cursor-style animated gradient background */
 .hero-gradient {
     position: relative;
@@ -22,10 +28,92 @@ body {
 .gradient-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
+    filter: blur(80px);
     opacity: 0;
     animation: float 15s ease-in-out infinite;
     will-change: transform, opacity;
+    z-index: 0;
+    pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.gradient-blob.fixed {
+    position: fixed !important;
+}
+
+/* Guide page specific blobs - more subtle */
+.guide-blob-1 {
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    top: 5%;
+    left: -5%;
+    animation-delay: 0s;
+}
+
+.guide-blob-2 {
+    width: 670px;
+    height: 670px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+    top: 1%;
+    right: -5%;
+    animation-delay: -5s;
+}
+
+.guide-blob-3 {
+    width: 650px;
+    height: 650px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
+    bottom: 10%;
+    left: 30%;
+    animation-delay: -10s;
+}
+
+.guide-blob-4 {
+    width: 690px;
+    height: 690px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+    top: 30%;
+    left: 10%;
+    animation-delay: -15s;
+}
+
+.guide-blob-5 {
+    width: 620px;
+    height: 620px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+    bottom: 10%;
+    right: 15%;
+    animation-delay: -20s;
+}
+
+@keyframes float-subtle {
+    0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 0.4;
+    }
+    25% { 
+        transform: translate(50px, -50px) scale(1.1);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translate(-30px, 30px) scale(0.9);
+        opacity: 0.3;
+    }
+    75% { 
+        transform: translate(40px, 20px) scale(1.05);
+        opacity: 0.45;
+    }
+}
+
+.gradient-blob.guide-blob-1,
+.gradient-blob.guide-blob-2,
+.gradient-blob.guide-blob-3,
+.gradient-blob.guide-blob-4,
+.gradient-blob.guide-blob-5 {
+    animation: float-subtle 15s ease-in-out infinite;
 }
 
 .blob-1 {
@@ -333,6 +421,11 @@ body {
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
     margin-top: 48px;
+    position: relative;
+    z-index: 10;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style paint;
 }
 
 @media (min-width: 768px) {
@@ -360,6 +453,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
+    contain: layout style;
 }
 
 .maximize-card::before {
