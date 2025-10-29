@@ -31,12 +31,23 @@ const ScrollToTop = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-50 p-4 rounded-full liquid-glass-strong text-white shadow-lg hover:shadow-purple-500/50 transition-all duration-500 hover:scale-110 group ${
+      className={`fixed bottom-8 right-8 z-50 p-3 rounded-full text-white transition-all duration-500 hover:scale-110 group ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16 pointer-events-none'
       }`}
+      style={{
+        background: 'rgba(255, 255, 255, 0.08)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        border: '1px solid rgba(255, 255, 255, 0.18)',
+        boxShadow: `
+          0 8px 32px 0 rgba(139, 92, 246, 0.15),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+          inset 0 -1px 0 0 rgba(0, 0, 0, 0.1)
+        `,
+      }}
       aria-label="Scroll to top"
     >
-      <ChevronUp className="w-6 h-6 group-hover:animate-bounce" />
+      <ChevronUp className="w-5 h-5 group-hover:animate-bounce" />
     </button>
   );
 };
