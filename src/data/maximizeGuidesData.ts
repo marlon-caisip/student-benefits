@@ -14,6 +14,16 @@ export const maximizeGuides: MaximizeGuide[] = [
     colorClass: 'purple'
   },
   {
+    id: 'digitalocean-ai-chatbot',
+    title: 'Build a Simple AI Chatbot',
+    description: 'Create an interactive AI chatbot using DigitalOcean Serverless Inference with vanilla JavaScript.',
+    category: 'AI/ML',
+    difficulty: 'Beginner',
+    relatedBenefits: ['DigitalOcean', 'GitHub Student Developer Pack'],
+    icon: 'Bot',
+    colorClass: 'blue'
+  },
+  {
     id: 'azure-deployment',
     title: 'Deploy Your First App with Azure',
     description: 'Learn how to use your $100 Azure credits to deploy a full-stack application to the cloud with CI/CD pipeline.',
@@ -91,16 +101,6 @@ export const maximizeGuides: MaximizeGuide[] = [
     difficulty: 'Beginner',
     relatedBenefits: ['GitHub Student Developer Pack'],
     icon: 'Bot',
-    colorClass: 'blue'
-  },
-  {
-    id: 'ai-model-deployment',
-    title: 'Deploy AI Models with Hugging Face',
-    description: 'Train, fine-tune, and deploy machine learning models using Hugging Face Spaces and Inference API.',
-    category: 'AI/ML',
-    difficulty: 'Advanced',
-    relatedBenefits: ['Hugging Face', 'Google Cloud Platform'],
-    icon: 'Brain',
     colorClass: 'blue'
   },
   {
