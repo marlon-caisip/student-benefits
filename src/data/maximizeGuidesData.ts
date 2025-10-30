@@ -14,6 +14,26 @@ export const maximizeGuides: MaximizeGuide[] = [
     colorClass: 'purple'
   },
   {
+    id: 'capstone-hosting',
+    title: 'Host Your Capstone Project',
+    description: 'Deploy your capstone project to DigitalOcean and connect a custom domain from Name.com using student credits.',
+    category: 'Cloud',
+    difficulty: 'Beginner',
+    relatedBenefits: ['DigitalOcean', 'Name.com (.me)'],
+    icon: 'Server',
+    colorClass: 'green'
+  },
+  {
+    id: 'dev-path-roadmap',
+    title: 'Choose Your Dev Path',
+    description: 'Explore different development career paths and find the perfect fit for your skills using Roadmap.sh.',
+    category: 'Career',
+    difficulty: 'Beginner',
+    relatedBenefits: ['Roadmap.sh', 'GitHub Student Developer Pack'],
+    icon: 'Map',
+    colorClass: 'blue'
+  },
+  {
     id: 'digitalocean-ai-chatbot',
     title: 'Build a Simple AI Chatbot',
     description: 'Create an interactive AI chatbot using DigitalOcean Serverless Inference with vanilla JavaScript.',
