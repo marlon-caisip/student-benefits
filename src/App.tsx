@@ -5,6 +5,8 @@ import ClaimingGuide from './components/guides/ClaimingGuide';
 import { Footer } from './components/Footer';
 import DigitalOceanGuide from './components/guides/DigitalOceanGuide';
 import AIChatbotGuide from './components/guides/AIChatbotGuide';
+import CapstoneHostingGuide from './components/guides/CapstoneHostingGuide';
+import DevPathGuide from './components/guides/DevPathGuide';
 import MaximizePage from './pages/MaximizePage';
 import MaximizeSection from './components/MaximizeSection';
 import ScrollToTop from './components/ScrollToTop';
@@ -30,6 +32,8 @@ function App() {
         <Route path="/maximize" element={<MaximizePage />} />
         <Route path="/guides/digitalocean" element={<DigitalOceanGuide />} />
         <Route path="/guides/digitalocean-ai-chatbot" element={<AIChatbotGuide />} />
+        <Route path="/guides/capstone-hosting" element={<CapstoneHostingGuide />} />
+        <Route path="/guides/dev-path" element={<DevPathGuide />} />
       </Routes>
     </Router>
   );
