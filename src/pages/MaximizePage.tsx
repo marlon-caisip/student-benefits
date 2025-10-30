@@ -29,6 +29,12 @@ const MaximizePage = () => {
     if (guideId === 'digitalocean-ai-chatbot') {
       return '/guides/digitalocean-ai-chatbot';
     }
+    if (guideId === 'capstone-hosting') {
+      return '/guides/capstone-hosting';
+    }
+    if (guideId === 'dev-path-roadmap') {
+      return '/guides/dev-path';
+    }
     return null;
   };
 
