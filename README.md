@@ -126,7 +126,9 @@ src/
 │   ├── ScrollToTop.tsx
 │   └── guides/          # Step-by-step tutorial guides
 │       ├── AIChatbotGuide.tsx
+│       ├── CapstoneHostingGuide.tsx
 │       ├── ClaimingGuide.tsx
+│       ├── DevPathGuide.tsx
 │       └── DigitalOceanGuide.tsx
 ├── data/                # Benefit data and content
 │   ├── benefitsData.ts
